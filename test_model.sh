@@ -1,11 +1,11 @@
 set -ex
 # models
-RESULTS_DIR='./results/color2blind2'
+RESULTS_DIR='./results/colourblindness'
 #G_PATH='./pretrained_models/edges2shoes_net_G.pth'
 #E_PATH='./pretrained_models/edges2shoes_net_E.pth'
 
 # dataset
-CLASS='color2blind'
+CLASS='colourblindness'
 DIRECTION='AtoB' # from domain A to domain B
 LOAD_SIZE=256 # scale images to this size
 FINE_SIZE=256 # then crop to this size
@@ -13,12 +13,12 @@ INPUT_NC=3  # number of channels in the input image
 
 # misc
 GPU_ID=0   # gpu id
-HOW_MANY=783 # number of input images duirng test
+HOW_MANY=771 # number of input images duirng test
 NUM_SAMPLES=1 # number of samples per input images
 
 # command
 CUDA_VISIBLE_DEVICES=${GPU_ID} python ./test.py \
-  --dataroot ./datasets/fun  \
+  --dataroot ./datasets/colourblindness  \
   --results_dir ${RESULTS_DIR} \
   --checkpoints_dir ./checkpoints/ \
   --name ${CLASS} \
